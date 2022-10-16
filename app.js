@@ -19,11 +19,11 @@ async function getWeatherByLocation(city){
 
       function addWeatherToPage(data){
         const dt = new Date();
-        
           const temp = Ktoc(data.main.temp);
+          //document.querySelector(".city").innerHTML = "Weather in " + city;
           document.querySelector(".date").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
-
-          const weather = document.createElement('div')
+          const weather = document.createElement('div');
+          //weather.classList.add('city');
           weather.classList.add('weather');
 
           weather.innerHTML = `
@@ -55,3 +55,5 @@ async function getWeatherByLocation(city){
         }
 
      });
+     
+     getWeatherByLocation("Durgapur");
